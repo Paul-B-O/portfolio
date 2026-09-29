@@ -123,8 +123,9 @@ tbody th { text-align: left; font-weight: 400; }
 
 /* Mobile */
 @media (max-width: 700px) {
-  .nav-toggle { display: block; }
-  .nav { display: none; width: 100%; flex-direction: column; gap: .5rem; }
-  .nav.open { display: flex; }
+  .js .nav-toggle { display: block; }
+  .nav { width: 100%; flex-direction: column; gap: .5rem; }
+  .js .nav { display: none; }
+  .js .nav.open { display: flex; }
   h1 { font-size: 1.9rem; }
 }

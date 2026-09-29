@@ -77,3 +77,9 @@ test('chaque section est accessible depuis le menu', () => {
     assert.ok(nav.includes(`href="#${id}"`), `section #${id} absente du menu`);
   }
 });
+
+test('le menu mobile reste visible sans JavaScript', () => {
+  const css = fs.readFileSync(path.join(PUBLIC_DIR, 'css/style.css'), 'utf8');
+  assert.doesNotMatch(css, /^\s*\.nav \{[^}]*display: none/m, 'le menu est masqué même sans JavaScript');
+  assert.match(css, /\.js \.nav \{ display: none; \}/);
+});

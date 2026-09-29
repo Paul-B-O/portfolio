@@ -1,3 +1,6 @@
+// Signale au CSS que le JavaScript est actif (sinon le menu reste visible)
+document.documentElement.classList.add('js');
+
 // Menu mobile
 const toggle = document.querySelector('.nav-toggle');
 const menu = document.getElementById('menu');
