@@ -69,3 +69,11 @@ test('aucun chemin absolu codé en dur', () => {
     assert.doesNotMatch(content, /[A-Z]:\\|\/home\/|\/Users\//, `chemin absolu dans ${file}`);
   }
 });
+
+test('chaque section est accessible depuis le menu', () => {
+  const nav = html.match(/<nav[\s\S]*?<\/nav>/)[0];
+  const sections = [...html.matchAll(/<section id="([^"]+)"/g)].map((m) => m[1]);
+  for (const id of sections) {
+    assert.ok(nav.includes(`href="#${id}"`), `section #${id} absente du menu`);
+  }
+});
