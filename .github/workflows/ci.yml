@@ -14,3 +14,11 @@ jobs:
         with:
           node-version: 20
       - run: npm test
+
+  docker:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: docker build -t portfolio:ci .
+      - run: docker run -d --name portfolio -p 8080:80 portfolio:ci
+      - run: curl --fail --retry 5 --retry-connrefused http://localhost:8080/

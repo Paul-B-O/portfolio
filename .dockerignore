@@ -1,0 +1,8 @@
+# Seul public/ est copié dans l'image : on exclut le reste du contexte de build
+.git
+.github
+node_modules
+tests
+*.md
+.env
+.env.*
