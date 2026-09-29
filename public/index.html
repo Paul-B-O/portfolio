@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Portfolio BTS SIO — présentation, réalisations professionnelles, tableau de synthèse et veille technologique.">
+  <title>Portfolio BTS SIO — Prénom Nom</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#presentation">Prénom Nom</a>
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" class="nav" aria-label="Navigation principale">
+      <a href="#presentation">Présentation</a>
+      <a href="#parcours">Parcours</a>
+      <a href="#competences">Compétences</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#synthese">Tableau de synthèse</a>
+      <a href="#veille">Veille</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Présentation -->
+    <section id="presentation" class="hero">
+      <h1>Prénom Nom</h1>
+      <p class="subtitle">Étudiant·e en BTS SIO — option SLAM</p>
+      <p>
+        Passionné·e par le développement et l'automatisation, je présente ici mes réalisations
+        professionnelles, mes compétences et ma veille technologique dans le cadre de l'épreuve E5
+        « Support et mise à disposition de services informatiques ».
+      </p>
+      <p><a class="button" href="#realisations">Voir mes réalisations</a></p>
+    </section>
+
+    <!-- Parcours / CV -->
+    <section id="parcours">
+      <h2>Parcours</h2>
+      <div class="grid two">
+        <article class="card">
+          <h3>Formation</h3>
+          <ul>
+            <li><strong>2025 – 2027</strong> — BTS SIO option SLAM, IIA</li>
+            <li><strong>2025</strong> — Baccalauréat</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Expériences professionnelles</h3>
+          <ul>
+            <li><strong>Stage 1re année</strong> — Entreprise, ville (6 semaines) : missions principales</li>
+            <li><strong>Stage 2e année</strong> — Entreprise, ville (7 semaines) : missions principales</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Certifications</h3>
+          <ul>
+            <li>PIX</li>
+            <li>MOOC SecNumacadémie (ANSSI)</li>
+            <li>MOOC Atelier RGPD (CNIL)</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Langues</h3>
+          <ul>
+            <li>Anglais — B2</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Compétences techniques -->
+    <section id="competences">
+      <h2>Compétences</h2>
+      <div class="grid three">
+        <article class="card">
+          <h3>Développement</h3>
+          <ul class="tags">
+            <li>HTML / CSS</li><li>JavaScript</li><li>PHP</li><li>SQL</li><li>Python</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Outils DevOps</h3>
+          <ul class="tags">
+            <li>Git / GitHub</li><li>GitHub Actions</li><li>Docker</li><li>Tests automatisés</li>
+          </ul>
+        </article>
+        <article class="card">
+          <h3>Systèmes &amp; réseaux</h3>
+          <ul class="tags">
+            <li>Linux</li><li>Windows Server</li><li>Active Directory</li><li>GLPI</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- Réalisations professionnelles -->
+    <section id="realisations">
+      <h2>Réalisations professionnelles</h2>
+      <div class="grid two">
+        <article class="card realisation" id="rp1">
+          <h3>RP1 — Portfolio avec intégration continue</h3>
+          <p class="meta">En formation · 2025</p>
+          <p>Conception de ce portfolio, versionné sur GitHub, testé et déployé automatiquement avec GitHub Actions.</p>
+          <p class="stack">HTML, CSS, JavaScript, Node.js, GitHub Actions</p>
+        </article>
+        <article class="card realisation" id="rp2">
+          <h3>RP2 — Gestion de parc avec GLPI</h3>
+          <p class="meta">En formation · 2025</p>
+          <p>Installation de GLPI, inventaire du parc et traitement de tickets d'incidents.</p>
+          <p class="stack">Linux, Apache, MariaDB, GLPI</p>
+        </article>
+        <article class="card realisation" id="rp3">
+          <h3>RP3 — Application web de gestion</h3>
+          <p class="meta">En stage · 2026</p>
+          <p>Développement d'une application CRUD avec authentification pour une organisation.</p>
+          <p class="stack">PHP, MySQL, MVC</p>
+        </article>
+        <article class="card realisation" id="rp4">
+          <h3>RP4 — Mise en production d'un service</h3>
+          <p class="meta">En stage · 2026</p>
+          <p>Conteneurisation et déploiement d'un service web, rédaction de la documentation utilisateur.</p>
+          <p class="stack">Docker, Nginx, Markdown</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Tableau de synthèse E5 -->
+    <section id="synthese">
+      <h2>Tableau de synthèse</h2>
+      <p>Couverture des compétences du bloc 1 par mes réalisations professionnelles.</p>
+      <div class="table-wrapper">
+        <table>
+          <caption>Compétences du bloc 1 — Support et mise à disposition de services informatiques</caption>
+          <thead>
+            <tr>
+              <th scope="col">Compétence</th>
+              <th scope="col">RP1</th>
+              <th scope="col">RP2</th>
+              <th scope="col">RP3</th>
+              <th scope="col">RP4</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><th scope="row">Gérer le patrimoine informatique</th><td></td><td>✔</td><td></td><td>✔</td></tr>
+            <tr><th scope="row">Répondre aux incidents et aux demandes d'assistance et d'évolution</th><td></td><td>✔</td><td>✔</td><td></td></tr>
+            <tr><th scope="row">Développer la présence en ligne de l'organisation</th><td>✔</td><td></td><td>✔</td><td></td></tr>
+            <tr><th scope="row">Travailler en mode projet</th><td>✔</td><td></td><td>✔</td><td>✔</td></tr>
+            <tr><th scope="row">Mettre à disposition des utilisateurs un service informatique</th><td>✔</td><td>✔</td><td></td><td>✔</td></tr>
+            <tr><th scope="row">Organiser son développement professionnel</th><td>✔</td><td></td><td></td><td>✔</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Veille technologique -->
+    <section id="veille">
+      <h2>Veille technologique</h2>
+      <article class="card">
+        <h3>Sujet : l'automatisation DevOps (CI/CD)</h3>
+        <p>
+          Suivi de l'évolution des pratiques d'intégration et de déploiement continus : pipelines,
+          conteneurs, sécurité de la chaîne logicielle.
+        </p>
+        <h4>Sources</h4>
+        <ul>
+          <li><a href="https://github.blog/" rel="noopener">GitHub Blog</a></li>
+          <li><a href="https://www.cert.ssi.gouv.fr/" rel="noopener">CERT-FR</a></li>
+          <li><a href="https://www.docker.com/blog/" rel="noopener">Docker Blog</a></li>
+        </ul>
+        <h4>Outils</h4>
+        <p>Flux RSS (Feedly), alertes Google, newsletters.</p>
+      </article>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact">
+        <li>Email : <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></li>
+        <li>GitHub : <a href="https://github.com/" rel="noopener">github.com/pseudo</a></li>
+        <li>LinkedIn : <a href="https://www.linkedin.com/" rel="noopener">linkedin.com/in/pseudo</a></li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year">2026</span> Prénom Nom — Portfolio BTS SIO</p>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
