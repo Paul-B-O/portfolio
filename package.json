@@ -1,0 +1,17 @@
+{
+  "name": "portfolio-bts-sio",
+  "version": "1.0.0",
+  "description": "Portfolio BTS SIO (épreuve E5) — site statique servi par un serveur Node.js sans dépendance",
+  "private": true,
+  "type": "module",
+  "main": "server.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "test": "node --test \"tests/**/*.test.js\""
+  },
+  "license": "MIT"
+}
