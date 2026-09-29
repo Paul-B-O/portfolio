@@ -52,7 +52,9 @@ a { color: var(--accent); }
 
 .nav { display: flex; flex-wrap: wrap; gap: 1rem; }
 .nav a { text-decoration: none; color: var(--muted); }
-.nav a:hover { color: var(--accent); }
+.nav a:hover,
+.nav a.active { color: var(--accent); }
+.nav a.active { font-weight: 600; }
 
 .nav-toggle {
   display: none;
