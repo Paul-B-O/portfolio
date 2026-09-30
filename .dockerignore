@@ -1,0 +1,11 @@
+# Seuls package.json, server.js et public/ sont copiés dans l'image : on exclut le reste du contexte de build
+.git
+.github
+node_modules
+tests
+docs
+nginx
+compose.yml
+*.md
+.env
+.env.*

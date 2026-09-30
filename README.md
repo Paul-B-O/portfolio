@@ -7,6 +7,7 @@ Le site est testé et déployé automatiquement sur GitHub Pages à chaque push 
 
 - Node.js 20+ (aucune dépendance npm à installer)
 - Git
+- Docker (optionnel, pour lancer le site dans un conteneur Nginx)
 
 ## Installation
 
@@ -27,6 +28,17 @@ Le portfolio est alors disponible sur <http://localhost:3000>.
 
 Pour changer le port sans fichier `.env` : `PORT=8080 npm start`.
 
+## Docker
+
+Le `Dockerfile` construit une image Nginx qui sert le dossier `public/`, comme en production.
+
+```bash
+npm run docker:build   # docker build -t portfolio:latest .
+npm run docker:run     # docker run --rm --name portfolio -p 8080:80 portfolio:latest
+```
+
+Le portfolio est alors disponible sur <http://localhost:8080>. L'image contient un `HEALTHCHECK` : l'état `healthy` apparaît dans `docker ps`.
+
 ## Tests
 
 Les tests utilisent le runner intégré de Node.js (`node:test`), sans dépendance :
@@ -38,7 +50,7 @@ Les tests utilisent le runner intégré de Node.js (`node:test`), sans dépendan
 
 Le déploiement est entièrement automatisé avec GitHub Actions :
 
-1. **CI** (`.github/workflows/ci.yml`) : lance `npm test` sur chaque pull request et chaque push hors `main`.
+1. **CI** (`.github/workflows/ci.yml`) : sur chaque pull request et chaque push hors `main`, lance `npm test` et vérifie que l'image Docker se construit et répond.
 2. **Deploy** (`.github/workflows/deploy.yml`) : sur push dans `main`, lance les tests puis publie le dossier `public/` sur GitHub Pages. Si un test échoue, rien n'est déployé.
 
 Mise en place (une seule fois) : dans le dépôt GitHub, **Settings → Pages → Source : GitHub Actions**.
@@ -63,7 +75,9 @@ URL de production : `https://<utilisateur>.github.io/portfolio-bts-sio/`
 │   └── js/main.js          # Menu mobile
 ├── tests/                  # Tests automatisés (node:test)
 ├── .github/workflows/      # CI et déploiement GitHub Pages
+├── docs/                   # Comptes rendus de TP
 ├── server.js               # Serveur statique local, sans dépendance
+├── Dockerfile              # Image Nginx du portfolio
 ├── AUDIT.md                # Grille d'audit DevOps (TP1)
 └── package.json            # Scripts npm
 ```
