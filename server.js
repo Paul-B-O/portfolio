@@ -56,7 +56,10 @@ function log(req, status) {
 // Démarre le serveur uniquement si le fichier est exécuté directement
 if (process.argv[1] === fileURLToPath(import.meta.url)) {
   const port = Number(process.env.PORT) || 3000;
-  createServer().listen(port, () => {
+  const server = createServer().listen(port, () => {
     console.log(`Portfolio disponible sur http://localhost:${port}`);
   });
+
+  // Arrêt propre quand Docker envoie SIGTERM (docker stop, docker compose down)
+  process.on('SIGTERM', () => server.close(() => process.exit(0)));
 }
