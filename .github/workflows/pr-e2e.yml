@@ -1,0 +1,66 @@
+name: PR E2E (Playwright)
+
+on:
+  pull_request:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  browsers:
+    name: e2e (${{ matrix.browser }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Install Playwright browser
+        run: npx playwright install --with-deps ${{ matrix.browser }}
+
+      # Pas de base de données : l'app est la stack Compose (Nginx → Node), comme en production
+      - name: Start the app (Docker Compose)
+        run: |
+          cp .env.example .env
+          docker compose up -d --build --wait
+
+      - name: Run Playwright E2E
+        env:
+          E2E_BASE_URL: http://localhost:8080
+        run: npx playwright test --project=${{ matrix.browser }}
+
+      - name: Show app logs (on failure)
+        if: failure()
+        run: docker compose logs
+
+      # Publié même en cas de succès, pour garder une trace de chaque exécution
+      - name: Upload Playwright report
+        if: ${{ !cancelled() }}
+        uses: actions/upload-artifact@v4
+        with:
+          name: playwright-report-${{ matrix.browser }}
+          path: playwright-report
+          retention-days: 14
+
+  # Check unique à rendre obligatoire sur main, quel que soit le nombre de navigateurs
+  e2e:
+    needs: browsers
+    if: ${{ always() }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: All browsers passed
+        run: test "${{ needs.browsers.result }}" = success
