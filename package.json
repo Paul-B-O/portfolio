@@ -1,7 +1,7 @@
 {
   "name": "portfolio-bts-sio",
   "version": "1.0.0",
-  "description": "Portfolio BTS SIO (épreuve E5) — site statique servi par un serveur Node.js sans dépendance",
+  "description": "Portfolio BTS SIO (épreuve E5) — site statique servi par un serveur Node.js sans dépendance d'exécution",
   "private": true,
   "type": "module",
   "main": "server.js",
@@ -12,10 +12,15 @@
     "start": "node server.js",
     "dev": "node --watch server.js",
     "test": "node --test \"tests/**/*.test.js\"",
+    "test:e2e": "playwright test",
+    "test:e2e:report": "playwright show-report",
     "docker:build": "docker build -t portfolio:latest .",
     "docker:run": "docker run --rm --name portfolio -p 8080:3000 portfolio:latest",
     "compose:up": "docker compose up -d --build --wait",
     "compose:down": "docker compose down"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.63.0"
+  }
 }

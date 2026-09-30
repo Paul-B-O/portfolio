@@ -3,6 +3,9 @@
 .github
 node_modules
 tests
+playwright.config.ts
+playwright-report
+test-results
 docs
 nginx
 compose.yml

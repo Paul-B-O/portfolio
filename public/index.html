@@ -10,8 +10,8 @@
 <body>
   <header class="site-header">
     <a class="brand" href="#presentation">Prénom Nom</a>
-    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="menu">Menu</button>
-    <nav id="menu" class="nav" aria-label="Navigation principale">
+    <button class="nav-toggle" type="button" data-testid="menu-toggle" aria-expanded="false" aria-controls="menu">Menu</button>
+    <nav id="menu" class="nav" data-testid="main-nav" aria-label="Navigation principale">
       <a href="#presentation">Présentation</a>
       <a href="#parcours">Parcours</a>
       <a href="#competences">Compétences</a>
@@ -24,7 +24,7 @@
 
   <main>
     <!-- Présentation -->
-    <section id="presentation" class="hero">
+    <section id="presentation" data-testid="section-presentation" class="hero">
       <h1>Prénom Nom</h1>
       <p class="subtitle">Étudiant·e en BTS SIO — option SLAM</p>
       <p>
@@ -36,7 +36,7 @@
     </section>
 
     <!-- Parcours / CV -->
-    <section id="parcours">
+    <section id="parcours" data-testid="section-parcours">
       <h2>Parcours</h2>
       <div class="grid two">
         <article class="card">
@@ -71,7 +71,7 @@
     </section>
 
     <!-- Compétences techniques -->
-    <section id="competences">
+    <section id="competences" data-testid="section-competences">
       <h2>Compétences</h2>
       <div class="grid three">
         <article class="card">
@@ -96,7 +96,7 @@
     </section>
 
     <!-- Réalisations professionnelles -->
-    <section id="realisations">
+    <section id="realisations" data-testid="section-realisations">
       <h2>Réalisations professionnelles</h2>
       <div class="grid two">
         <article class="card realisation" id="rp1">
@@ -127,11 +127,11 @@
     </section>
 
     <!-- Tableau de synthèse E5 -->
-    <section id="synthese">
+    <section id="synthese" data-testid="section-synthese">
       <h2>Tableau de synthèse</h2>
       <p>Couverture des compétences du bloc 1 par mes réalisations professionnelles.</p>
       <div class="table-wrapper">
-        <table>
+        <table data-testid="synthese-table">
           <caption>Compétences du bloc 1 — Support et mise à disposition de services informatiques</caption>
           <thead>
             <tr>
@@ -155,7 +155,7 @@
     </section>
 
     <!-- Veille technologique -->
-    <section id="veille">
+    <section id="veille" data-testid="section-veille">
       <h2>Veille technologique</h2>
       <article class="card">
         <h3>Sujet : l'automatisation DevOps (CI/CD)</h3>
@@ -175,7 +175,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" data-testid="section-contact">
       <h2>Contact</h2>
       <ul class="contact">
         <li>Email : <a href="mailto:prenom.nom@example.com">prenom.nom@example.com</a></li>
